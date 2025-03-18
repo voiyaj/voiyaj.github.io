@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voiyaj - Favorite Links</title>
-    <meta name="description" content="Explore my favorite links across Tech, Entertainment, Tools, and more!">
-    <meta name="keywords" content="favorite links, Voiyaj, bookmarks">
+    <title>Novum - Search Google, Brave, or DuckDuckGo</title>
+    <meta name="description" content="Voiyaj: Search Google, Brave, or DuckDuckGo for instant results to any question, free and simple!">
+    <meta name="keywords" content="search engine, Google, Brave, DuckDuckGo, instant results, free search tool">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -13,73 +13,33 @@
     <main>
         <div class="container">
             <h1>Voiyaj</h1>
-            <h2>Favorite Links</h2>
-            <div class="links-grid">
-                <!-- Column 1: Tech -->
-                <div class="links-column">
-                    <h3>Tech</h3>
-                    <ul>
-                        <li><a href="https://techcrunch.com" target="_blank">TechCrunch</a></li>
-                        <li><a href="https://arstechnica.com" target="_blank">Ars Technica</a></li>
-                        <li><a href="https://www.wired.com" target="_blank">Wired</a></li>
-                    </ul>
-                    <h3>Code</h3>
-                    <ul>
-                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                        <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
-                    </ul>
-                </div>
-                <!-- Column 2: Entertainment -->
-                <div class="links-column">
-                    <h3>Movies</h3>
-                    <ul>
-                        <li><a href="https://www.imdb.com" target="_blank">IMDb</a></li>
-                        <li><a href="https://www.rottentomatoes.com" target="_blank">Rotten Tomatoes</a></li>
-                    </ul>
-                    <h3>Music</h3>
-                    <ul>
-                        <li><a href="https://www.spotify.com" target="_blank">Spotify</a></li>
-                        <li><a href="https://soundcloud.com" target="_blank">SoundCloud</a></li>
-                        <li><a href="https://bandcamp.com" target="_blank">Bandcamp</a></li>
-                        <li><a href="https://www.last.fm" target="_blank">Last.fm</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Tools -->
-                <div class="links-column">
-                    <h3>Productivity</h3>
-                    <ul>
-                        <li><a href="https://www.notion.so" target="_blank">Notion</a></li>
-                        <li><a href="https://todoist.com" target="_blank">Todoist</a></li>
-                        <li><a href="https://trello.com" target="_blank">Trello</a></li>
-                        <li><a href="https://www.evernote.com" target="_blank">Evernote</a></li>
-                    </ul>
-                </div>
-                <!-- Column 4: Misc -->
-                <div class="links-column">
-                    <h3>Fun</h3>
-                    <ul>
-                        <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
-                        <li><a href="https://9gag.com" target="_blank">9GAG</a></li>
-                    </ul>
-                    <h3>Learning</h3>
-                    <ul>
-                        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
-                        <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
-                        <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
-                    </ul>
-                    <h3>News</h3>
-                    <ul>
-                        <li><a href="https://www.bbc.com" target="_blank">BBC</a></li>
-                    </ul>
-                </div>
+            <form id="searchForm" aria-label="Search Engine Form">
+                <input type="text" id="query" placeholder="Search anything..." autocomplete="off" aria-label="Search Input">
+                <select id="source" aria-label="Select Search Engine">
+                    <option value="google">Google</option>
+                    <option value="brave">Brave</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                </select>
+                <button type="submit" aria-label="Search Button">Search</button>
+            </form>
+            <div class="ai-links">
+                <a href="https://x.ai/grok" target="_blank" title="Grok by xAI" aria-label="Visit Grok">
+                    <img src="images/grok-icon.png" alt="Grok Icon">
+                </a>
+                <a href="https://gemini.google.com" target="_blank" title="Gemini by Google" aria-label="Visit Gemini">
+                    <img src="images/gemini-icon.png" alt="Gemini Icon">
+                </a>
+                <a href="https://chat.openai.com" target="_blank" title="ChatGPT by OpenAI" aria-label="Visit ChatGPT">
+                    <img src="images/chatgpt-icon.png" alt="ChatGPT Icon">
+                </a>
             </div>
             <nav>
-                <a href="index.html" aria-label="Back to Search"><i class="fas fa-ship"></i></a>
+                <a href="links.html" aria-label="Favorite Links"><i class="fas fa-link"></i></a>
             </nav>
         </div>
     </main>
-    <script src="links.js"></script>
+    <script src="script.js"></script>
     <!-- Your Cloudflare script unchanged -->
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9224c1228b28674f',t:'MTc0MjMwMTE2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9224c1228f457bcf',t:'MTc0MjMwMTE2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
