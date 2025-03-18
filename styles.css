@@ -134,13 +134,13 @@ nav a:hover {
 }
 
 nav a i {
-    color: #F28C38; /* Orange for icons */
-    font-size: 20px; /* Slightly larger for visibility */
-    text-decoration: none; /* No underline on icon */
+    color: #F28C38;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 nav a:hover i {
-    color: #D97A30; /* Darker orange on hover */
+    color: #D97A30;
 }
 
 .links-grid {
@@ -182,6 +182,57 @@ nav a:hover i {
     color: #F28C38;
 }
 
+/* Floating Mail Icon */
+.mail-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.mail-icon i {
+    color: #F28C38;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mail-icon i:hover {
+    color: #D97A30;
+}
+
+/* Mail Menu */
+.mail-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2C2C2C;
+    border: 1px solid #4B5E6D;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mail-menu.active {
+    display: block;
+}
+
+.mail-menu a {
+    display: block;
+    color: #E0E0E0;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.mail-menu a:hover {
+    color: #F28C38;
+    text-decoration: underline;
+}
+
+/* Responsiveness */
 @media (max-width: 600px) {
     h1 { font-size: 28px; }
     h2 { font-size: 20px; }
@@ -206,5 +257,16 @@ nav a:hover i {
     }
     .links-column ul.active {
         display: block;
+    }
+    .mail-icon {
+        top: 10px;
+        right: 10px;
+    }
+    .mail-icon i {
+        font-size: 20px;
+    }
+    .mail-menu {
+        right: -10px;
+        min-width: 120px;
     }
 }
