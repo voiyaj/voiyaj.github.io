@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novum - Search Google, Brave, or DuckDuckGo</title>
+    <meta name="description" content="Voiyaj: Search Google, Brave, or DuckDuckGo for instant results to any question, free and simple!">
+    <meta name="keywords" content="search engine, Google, Brave, DuckDuckGo, instant results, free search tool">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Voiyaj</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="searchForm" aria-label="Search Engine Form">
+                <input type="text" id="query" placeholder="Search anything..." autocomplete="off" aria-label="Search Input">
+                <select id="source" aria-label="Select Search Engine">
+                    <option value="google">Google</option>
+                    <option value="brave">Brave</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                </select>
+                <button type="submit" aria-label="Search Button">Search</button>
+            </form>
+            <div class="ai-links">
+                <a href="https://x.ai/grok" target="_blank" title="Grok by xAI" aria-label="Visit Grok">
+                    <img src="images/grok-icon.png" alt="Grok Icon">
+                </a>
+                <a href="https://gemini.google.com" target="_blank" title="Gemini by Google" aria-label="Visit Gemini">
+                    <img src="images/gemini-icon.png" alt="Gemini Icon">
+                </a>
+                <a href="https://chat.openai.com" target="_blank" title="ChatGPT by OpenAI" aria-label="Visit ChatGPT">
+                    <img src="images/chatgpt-icon.png" alt="ChatGPT Icon">
+                </a>
+            </div>
+            <nav>
+                <a href="links.html">Favorite Links</a>
+            </nav>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
