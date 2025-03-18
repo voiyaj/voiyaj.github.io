@@ -1,5 +1,5 @@
 body {
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,32 +7,33 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #D7DADC;
-    color: #333;
+    background-color: #1A1A1A; /* Dark gray background */
+    color: #E0E0E0; /* Light gray text for readability */
 }
 
 .container {
     text-align: center;
     width: 90%;
     max-width: 800px;
+    margin: 0 auto; /* Added from previous suggestion */
 }
 
 h1 {
     font-size: 36px;
-    color: #333; /* Grok's off-black text for title */
+    color: #E0E0E0; /* Light gray for the title */
     margin-bottom: 20px;
     white-space: nowrap;
 }
 
 h2 {
     font-size: 24px;
-    color: #333;
+    color: #E0E0E0; /* Light gray */
     margin-bottom: 15px;
 }
 
 h3 {
     font-size: 18px;
-    color: #333;
+    color: #E0E0E0; /* Light gray */
     margin: 10px 0 5px;
     cursor: pointer;
 }
@@ -51,28 +52,28 @@ input[type="text"] {
     max-width: 400px;
     padding: 10px;
     font-size: 16px;
-    background-color: #FFFFFF; /* White background */
-    border: 1px solid #4B5E6D; /* Grayish border */
+    background-color: #2C2C2C; /* Darker input background */
+    border: 1px solid #4B5E6D; /* Keep grayish border */
     border-radius: 24px;
     box-shadow: none;
     outline: none;
-    color: #0F1419; /* Text color for contrast */
+    color: #E0E0E0; /* Light text in input */
 }
 
 input[type="text"]:focus {
-    border-color: #F28C38; /* Orangish on focus */
+    border-color: #F28C38; /* Keep orangish accent on focus */
 }
 
 select {
     padding: 10px;
     font-size: 14px;
-    background-color: #FFFFFF; /* White background */
+    background-color: #2C2C2C; /* Darker select background */
     border: 1px solid #4B5E6D; /* Grayish border */
     border-radius: 24px;
     cursor: pointer;
     min-width: 120px;
     max-width: 150px;
-    color: #0F1419;
+    color: #E0E0E0; /* Light text in select */
 }
 
 select:focus {
@@ -83,8 +84,8 @@ select:focus {
 button {
     padding: 10px 20px;
     font-size: 14px;
-    color: #FFFFFF;
-    background-color: #F28C38; /* Orangish button */
+    color: #FFFFFF; /* White text */
+    background-color: #F28C38; /* Keep orangish button */
     border: none;
     border-radius: 24px;
     cursor: pointer;
@@ -142,7 +143,7 @@ nav a:hover {
 
 .links-column {
     width: 150px;
-    background-color: #FFFFFF; /* White background for columns */
+    background-color: #2C2C2C; /* Darker column background */
     border: 1px solid #4B5E6D; /* Grayish border */
     border-radius: 8px;
     padding: 10px;
@@ -161,7 +162,7 @@ nav a:hover {
 }
 
 .links-column a {
-    color: #0F1419; /* Near-black for link text */
+    color: #E0E0E0; /* Light gray for link text */
     font-size: 14px;
     text-decoration: none;
 }
