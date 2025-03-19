@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dork - Advanced Google Search</title>
+    <meta name="description" content="Dork: Perform advanced Google searches with operators like intitle, filetype, inurl, intext, and site. Free and simple!">
+    <meta name="keywords" content="Google Dorking, advanced search, search operators, Google hacking, free tool">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dork</h1>
+            <h2>Advanced Google Search</h2>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="dorkingForm" aria-label="Google Dorking Form" onsubmit="buildDorkQuery(event)">
+                <!-- General Keywords -->
+                <input type="text" id="keywords" placeholder="Enter keywords..." autocomplete="off" aria-label="Keywords Input">
+
+                <!-- Intitle -->
+                <select id="intitle" aria-label="Intitle Operator">
+                    <option value="">Intitle: None</option>
+                    <option value="guide">guide</option>
+                    <option value="login">login</option>
+                    <option value="admin">admin</option>
+                </select>
+
+                <!-- Filetype -->
+                <select id="filetype" aria-label="Filetype Operator">
+                    <option value="">Filetype: None</option>
+                    <option value="pdf">PDF</option>
+                    <option value="doc">DOC</option>
+                    <option value="txt">TXT</option>
+                </select>
+
+                <!-- Inurl -->
+                <select id="inurl" aria-label="Inurl Operator">
+                    <option value="">Inurl: None</option>
+                    <option value="signup">signup</option>
+                    <option value="login">login</option>
+                    <option value="forum">forum</option>
+                </select>
+
+                <!-- Intext -->
+                <select id="intext" aria-label="Intext Operator">
+                    <option value="">Intext: None</option>
+                    <option value="confidential">confidential</option>
+                    <option value="password">password</option>
+                    <option value="secret">secret</option>
+                </select>
+
+                <!-- Site -->
+                <select id="site" aria-label="Site Operator">
+                    <option value="">Site: None</option>
+                    <option value="*.edu">*.edu</option>
+                    <option value="*.org">*.org</option>
+                    <option value="*.gov">*.gov</option>
+                </select>
+
+                <button type="submit" aria-label="Search Button">Search</button>
+            </form>
+            <nav>
+                <a href="index.html">Back to Voiyaj</a>
+            </nav>
+        </div>
+    </main>
+    <script>
+        function buildDorkQuery(event) {
+            event.preventDefault();
+
+            const keywords = document.getElementById('keywords').value.trim();
+            const intitle = document.getElementById('intitle').value;
+            const filetype = document.getElementById('filetype').value;
+            const inurl = document.getElementById('inurl').value;
+            const intext = document.getElementById('intext').value;
+            const site = document.getElementById('site').value;
+
+            let query = keywords;
+            if (intitle) query += ` intitle:${intitle}`;
+            if (filetype) query += ` filetype:${filetype}`;
+            if (inurl) query += ` inurl:${inurl}`;
+            if (intext) query += ` intext:${intext}`;
+            if (site) query += ` site:${site}`;
+
+            if (query.trim()) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            }
+        }
+    </script>
+</body>
+</html>
