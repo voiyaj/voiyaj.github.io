@@ -7,7 +7,6 @@
     <meta name="description" content="Dork: Perform advanced Google searches with operators like intitle, filetype, inurl, intext, and site. Free and simple!">
     <meta name="keywords" content="Google Dorking, advanced search, search operators, Google hacking, free tool">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome CDN for the icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -19,10 +18,7 @@
     <main>
         <div class="container">
             <form id="dorkingForm" aria-label="Google Dorking Form" onsubmit="buildDorkQuery(event)">
-                <!-- General Keywords -->
                 <input type="text" id="keywords" placeholder="Enter keywords..." autocomplete="off" aria-label="Keywords Input">
-
-                <!-- Intitle -->
                 <select id="intitle" aria-label="Intitle Operator">
                     <option value="">Intitle: None</option>
                     <option value="guide">guide</option>
@@ -30,8 +26,6 @@
                     <option value="admin">admin</option>
                     <option value="index of">index of</option>
                 </select>
-
-                <!-- Filetype (Multiple Selection Enabled) -->
                 <select id="filetype" multiple aria-label="Filetype Operator">
                     <option value="">Filetype: None</option>
                     <option value="doc">DOC</option>
@@ -52,65 +46,49 @@
                     <option value="svg">SVG</option>
                     <option value="exp">EXP</option>
                 </select>
-
-                <!-- Inurl -->
                 <select id="inurl" aria-label="Inurl Operator">
                     <option value="">Inurl: None</option>
                     <option value="signup">signup</option>
                     <option value="login">login</option>
                     <option value="forum">forum</option>
                 </select>
-
-                <!-- Intext -->
                 <select id="intext" aria-label="Intext Operator">
                     <option value="">Intext: None</option>
                     <option value="confidential">confidential</option>
                     <option value="password">password</option>
                     <option value="secret">secret</option>
                 </select>
-
-                <!-- Site -->
                 <select id="site" aria-label="Site Operator">
                     <option value="">Site: None</option>
                     <option value="*.edu">*.edu</option>
                     <option value="*.org">*.org</option>
                     <option value="*.gov">*.gov</option>
                 </select>
-
                 <button type="submit" aria-label="Search Button">Search</button>
             </form>
             <nav>
-                <a href="index.html" title="Back to Voiyaj"><i class="fas fa-home"></i></a>
+                <a href="index.html" title="Back to Voiyaj"><i class="fas fa-ship"></i></a>
             </nav>
         </div>
     </main>
     <script>
         function buildDorkQuery(event) {
             event.preventDefault();
-
             const keywords = document.getElementById('keywords').value.trim();
             const intitle = document.getElementById('intitle').value;
             const filetypeSelect = document.getElementById('filetype');
             const inurl = document.getElementById('inurl').value;
             const intext = document.getElementById('intext').value;
             const site = document.getElementById('site').value;
-
             let query = keywords;
-
-            // Handle single intitle
             if (intitle) query += ` intitle:${intitle}`;
-
-            // Handle multiple filetypes
             const selectedFiletypes = Array.from(filetypeSelect.selectedOptions)
                 .filter(option => option.value !== "")
                 .map(option => `filetype:${option.value}`);
             if (selectedFiletypes.length > 0) query += ` ${selectedFiletypes.join(" ")}`;
-
-            // Handle other single-value operators
             if (inurl) query += ` inurl:${inurl}`;
             if (intext) query += ` intext:${intext}`;
             if (site) query += ` site:${site}`;
-
             if (query.trim()) {
                 window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
             }
