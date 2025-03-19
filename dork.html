@@ -7,12 +7,13 @@
     <meta name="description" content="Dork: Perform advanced Google searches with operators like intitle, filetype, inurl, intext, and site. Free and simple!">
     <meta name="keywords" content="Google Dorking, advanced search, search operators, Google hacking, free tool">
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN for the icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Dork</h1>
-            <h2>Advanced Google Search</h2>
         </div>
     </header>
     <main>
@@ -27,14 +28,29 @@
                     <option value="guide">guide</option>
                     <option value="login">login</option>
                     <option value="admin">admin</option>
+                    <option value="index of">index of</option>
                 </select>
 
-                <!-- Filetype -->
-                <select id="filetype" aria-label="Filetype Operator">
+                <!-- Filetype (Multiple Selection Enabled) -->
+                <select id="filetype" multiple aria-label="Filetype Operator">
                     <option value="">Filetype: None</option>
-                    <option value="pdf">PDF</option>
                     <option value="doc">DOC</option>
+                    <option value="pdf">PDF</option>
+                    <option value="xls">XLS</option>
                     <option value="txt">TXT</option>
+                    <option value="ps">PS</option>
+                    <option value="rtf">RTF</option>
+                    <option value="odt">ODT</option>
+                    <option value="sxw">SXW</option>
+                    <option value="psw">PSW</option>
+                    <option value="ppt">PPT</option>
+                    <option value="pps">PPS</option>
+                    <option value="xml">XML</option>
+                    <option value="wav">WAV</option>
+                    <option value="mp3">MP3</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="svg">SVG</option>
+                    <option value="exp">EXP</option>
                 </select>
 
                 <!-- Inurl -->
@@ -64,7 +80,7 @@
                 <button type="submit" aria-label="Search Button">Search</button>
             </form>
             <nav>
-                <a href="index.html">Back to Voiyaj</a>
+                <a href="index.html" title="Back to Voiyaj"><i class="fas fa-home"></i></a>
             </nav>
         </div>
     </main>
@@ -74,14 +90,23 @@
 
             const keywords = document.getElementById('keywords').value.trim();
             const intitle = document.getElementById('intitle').value;
-            const filetype = document.getElementById('filetype').value;
+            const filetypeSelect = document.getElementById('filetype');
             const inurl = document.getElementById('inurl').value;
             const intext = document.getElementById('intext').value;
             const site = document.getElementById('site').value;
 
             let query = keywords;
+
+            // Handle single intitle
             if (intitle) query += ` intitle:${intitle}`;
-            if (filetype) query += ` filetype:${filetype}`;
+
+            // Handle multiple filetypes
+            const selectedFiletypes = Array.from(filetypeSelect.selectedOptions)
+                .filter(option => option.value !== "")
+                .map(option => `filetype:${option.value}`);
+            if (selectedFiletypes.length > 0) query += ` ${selectedFiletypes.join(" ")}`;
+
+            // Handle other single-value operators
             if (inurl) query += ` inurl:${inurl}`;
             if (intext) query += ` intext:${intext}`;
             if (site) query += ` site:${site}`;
