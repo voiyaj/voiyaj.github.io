@@ -73,27 +73,45 @@
         </div>
     </main>
     <script>
-        function buildDorkQuery(event) {
-            event.preventDefault();
-            const keywords = document.getElementById('keywords').value.trim();
-            const intitle = document.getElementById('intitle').value;
-            const filetypeSelect = document.getElementById('filetype');
-            const inurl = document.getElementById('inurl').value;
-            const intext = document.getElementById('intext').value;
-            const site = document.getElementById('site').value;
-            let query = keywords;
-            if (intitle) query += ` intitle:${intitle}`;
-            const selectedFiletypes = Array.from(filetypeSelect.selectedOptions)
-                .filter(option => option.value !== "")
-                .map(option => `filetype:${option.value}`);
-            if (selectedFiletypes.length > 0) query += ` ${selectedFiletypes.join(" ")}`;
-            if (inurl) query += ` inurl:${inurl}`;
-            if (intext) query += ` intext:${intext}`;
-            if (site) query += ` site:${site}`;
-            if (query.trim()) {
-                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            }
-        }
+function buildDorkQuery(event) {
+    event.preventDefault();
+    const keywords = document.getElementById('keywords').value.trim();
+    const intitle = document.getElementById('intitle').value;
+    const filetypeSelect = document.getElementById('filetype');
+    const inurl = document.getElementById('inurl').value;
+    const intext = document.getElementById('intext').value;
+    const site = document.getElementById('site').value;
+
+    let query = '';
+    
+    // Add keywords in quotes if provided
+    if (keywords) {
+        query += `"${keywords}"`;
+    }
+
+    // Add intitle in quotes if selected
+    if (intitle) {
+        query += ` intitle:"${intitle}"`;
+    }
+
+    // Add filetypes in parentheses with pipe separators
+    const selectedFiletypes = Array.from(filetypeSelect.selectedOptions)
+        .filter(option => option.value !== "")
+        .map(option => option.value);
+    if (selectedFiletypes.length > 0) {
+        query += ` (${selectedFiletypes.join('|')})`;
+    }
+
+    // Add inurl, intext, and site as is
+    if (inurl) query += ` inurl:${inurl}`;
+    if (intext) query += ` intext:${intext}`;
+    if (site) query += ` site:${site}`;
+
+    // Perform the search if there's a query
+    if (query.trim()) {
+        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    }
+}
     </script>
 </body>
 </html>
