@@ -85,14 +85,14 @@ button {
     padding: 10px 20px;
     font-size: 14px;
     color: #FFFFFF;
-    background-color: #F28C38;
+    background-color: #FE5B16;
     border: none;
     border-radius: 24px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #D97A30;
+    background-color: #FDA116;
 }
 
 .ai-links {
