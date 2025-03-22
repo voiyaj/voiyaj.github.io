@@ -8,7 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #000017;
-    color: #FFFFFF;
+    color: #EBECF7;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 
 h1 {
     font-size: 36px;
-    color: #FFFFFF;
+    color: #EBECF7;
     margin-bottom: 20px;
     white-space: nowrap;
 }
