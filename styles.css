@@ -52,23 +52,23 @@ input[type="text"] {
     max-width: 400px;
     padding: 10px;
     font-size: 16px;
-    background-color: #2C2C2C;
-    border: 1px solid #4B5E6D;
+    background-color: #000000;
+    border: 1px solid #A6AFFF;
     border-radius: 24px;
     box-shadow: none;
     outline: none;
-    color: #E0E0E0;
+    color: #FFFFFF;
 }
 
 input[type="text"]:focus {
-    border-color: #F28C38;
+    border-color: #6573FF;
 }
 
 select {
     padding: 10px;
     font-size: 14px;
     background-color: #2C2C2C;
-    border: 1px solid #4B5E6D;
+    border: 1px solid #A6AFFF;
     border-radius: 24px;
     cursor: pointer;
     min-width: 120px;
@@ -77,7 +77,7 @@ select {
 }
 
 select:focus {
-    border-color: #F28C38;
+    border-color: #6573FF;
     outline: none;
 }
 
