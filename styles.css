@@ -124,7 +124,7 @@ nav {
 }
 
 nav a {
-    color: #F28C38;
+    color: #FE5B16;
     font-size: 16px;
     text-decoration: none;
 }
@@ -140,7 +140,7 @@ nav a i {
 }
 
 nav a:hover i {
-    color: #D97A30;
+    color: #FDA116;
 }
 
 .links-grid {
