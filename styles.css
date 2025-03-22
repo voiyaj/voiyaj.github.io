@@ -153,8 +153,8 @@ nav a:hover i {
 
 .links-column {
     width: 150px;
-    background-color: #2C2C2C;
-    border: 1px solid #4B5E6D;
+    background-color: #000000;
+    border: 1px solid #A6AFFF;
     border-radius: 8px;
     padding: 10px;
     break-inside: avoid;
