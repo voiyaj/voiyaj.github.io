@@ -73,7 +73,7 @@ select {
     cursor: pointer;
     min-width: 120px;
     max-width: 150px;
-    color: #E0E0E0;
+    color: #FFFFFF;
 }
 
 select:focus {
