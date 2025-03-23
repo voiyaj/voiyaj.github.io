@@ -2,14 +2,15 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 60px; /* Space for footer height */
+    padding-bottom: 60px; /* Space for footer on larger screens */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-color: #000017;
     color: #EBECF7;
+    height: auto; /* Allow natural height instead of forcing 100vh */
+    min-height: 100vh; /* Still ensures full height if content is short */
 }
 
 .container {
@@ -242,11 +243,11 @@ footer {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background-color: #000000;
+    background-color: #000017;
     color: #EBECF7;
     font-size: 14px;
     border-top: 1px solid #A6AFFF;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
 }
 
 footer a {
@@ -296,4 +297,22 @@ footer a:hover {
         right: -10px;
         min-width: 120px;
     }
+}
+/* Hide footer and remove padding on small screens */
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 0; /* Remove padding when footer is hidden */
+    }
+    footer {
+        display: none; /* Hide footer on phone screens */
+    }
+}
+
+/* Ensure container doesn’t overflow unnecessarily */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-grow: 1; /* Allows container to expand if needed */
 }
