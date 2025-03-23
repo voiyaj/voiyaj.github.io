@@ -18,16 +18,61 @@
     <main>
         <div class="container">
             <form id="dorkingForm" aria-label="Google Dorking Form" onsubmit="buildDorkQuery(event)">
-                <!-- [Existing form content unchanged] -->
+                <input type="text" id="keywords" placeholder="Enter keywords..." autocomplete="off" aria-label="Keywords Input">
+                <select id="intitle" aria-label="Intitle Operator">
+                    <option value="">Intitle: None</option>
+                    <option value="guide">guide</option>
+                    <option value="login">login</option>
+                    <option value="admin">admin</option>
+                    <option value="index of">index of</option>
+                </select>
+                <select id="filetype" multiple aria-label="Filetype Operator">
+                    <option value="">Filetype: None</option>
+                    <option value="doc">DOC</option>
+                    <option value="pdf">PDF</option>
+                    <option value="xls">XLS</option>
+                    <option value="txt">TXT</option>
+                    <option value="ps">PS</option>
+                    <option value="rtf">RTF</option>
+                    <option value="odt">ODT</option>
+                    <option value="sxw">SXW</option>
+                    <option value="psw">PSW</option>
+                    <option value="ppt">PPT</option>
+                    <option value="pps">PPS</option>
+                    <option value="xml">XML</option>
+                    <option value="wav">WAV</option>
+                    <option value="mp3">MP3</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="svg">SVG</option>
+                    <option value="exp">EXP</option>
+                </select>
+                <select id="inurl" aria-label="Inurl Operator">
+                    <option value="">Inurl: None</option>
+                    <option value="signup">signup</option>
+                    <option value="login">login</option>
+                    <option value="forum">forum</option>
+                </select>
+                <select id="intext" aria-label="Intext Operator">
+                    <option value="">Intext: None</option>
+                    <option value="confidential">confidential</option>
+                    <option value="password">password</option>
+                    <option value="secret">secret</option>
+                </select>
+                <select id="site" aria-label="Site Operator">
+                    <option value="">Site: None</option>
+                    <option value="*.edu">*.edu</option>
+                    <option value="*.org">*.org</option>
+                    <option value="*.gov">*.gov</option>
+                </select>
+                <button type="submit" aria-label="Search Button">Search</button>
             </form>
             <nav>
                 <a href="index.html" title="Back to Voiyaj"><i class="fas fa-ship"></i></a>
                 <a href="links.html" title="Favorite Links"><i class="fas fa-link"></i></a>
-                <a href="about.html" title="About Voiyaj"><i class="fas fa-info-circle"></i></a>
             </nav>
         </div>
     </main>
-    <div class="mail-icon">
+<div class="mail-icon">
         <i class="fas fa-paper-plane"></i>
         <div class="mail-menu" id="mailMenu">
             <a href="https://mail.google.com" target="_blank">Gmail</a>
