@@ -103,20 +103,21 @@ button:hover {
     gap: 20px;
 }
 
+/* Specific styling for AI links on index page */
 .ai-links a {
-    display: inline-block;
-    text-decoration: none;
+    color: #A6AFFF; /* Default color */
 }
 
-.ai-links img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    transition: opacity 0.3s;
+.ai-links a:hover {
+    color: #6573FF; /* Hover color */
+}
+
+.ai-links a:visited {
+    color: #A6AFFF; /* Prevent visited color change */
 }
 
 .ai-links a:hover img {
-    opacity: 0.8;
+    opacity: 0.8; /* Retain existing hover effect for images */
 }
 
 nav {
