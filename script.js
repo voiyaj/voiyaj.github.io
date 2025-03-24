@@ -11,7 +11,7 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
             url = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
             break;
         case 'google':
-            url = `https://www.google.com/search?q=${encodedQuery}`;
+            url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
             break;
         case 'brave':
             url = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
